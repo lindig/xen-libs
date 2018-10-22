@@ -1,0 +1,15 @@
+opam-version: "2.0"
+synopsis: "OCaml bindings for the Xen hypervisor"
+maintainer: "Christian Lindig <christian.lindig@citrix.com>"
+authors:  "Christian Lindig <christian.lindig@citrix.com>"
+license: "LGPL"
+homepage: "https://github.com/lindig/xen-libs"
+bug-reports: "https://github.com/lindig/xen-libs/issues"
+depends: [
+  "ocaml"
+  "dune" {build}
+  "base-unix"
+]
+build: ["dune" "build" "-p" name "-j" jobs]
+depexts: ["m4" "libxen-dev" "libsystemd-dev"] {os-distribution = "debian"}
+dev-repo: "git+https://github.com/lindig/xen-libs.git"
